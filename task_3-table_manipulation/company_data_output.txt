@@ -1,0 +1,569 @@
+SQL> select * from employee;
+
+EMP EMPLOYEEFNAME                  EMPLOYEELNAME                  EMPLOYEEGRADE 
+--- ------------------------------ ------------------------------ ------------- 
+SUP                                                                             
+---                                                                             
+R06 Lionel                         Messi                                      6 
+R06                                                                             
+                                                                                
+R01 Mary                           Breen                                      5 
+R06                                                                             
+                                                                                
+R05 Mick                           Jagger                                     5 
+R06                                                                             
+                                                                                
+
+EMP EMPLOYEEFNAME                  EMPLOYEELNAME                  EMPLOYEEGRADE 
+--- ------------------------------ ------------------------------ ------------- 
+SUP                                                                             
+---                                                                             
+R02 Eden                           Hazard                                     3 
+R01                                                                             
+                                                                                
+R04 Jane                           Chilton                                    3 
+R05                                                                             
+                                                                                
+R08 Milko                          Djurovski                                  3 
+R05                                                                             
+                                                                                
+
+EMP EMPLOYEEFNAME                  EMPLOYEELNAME                  EMPLOYEEGRADE 
+--- ------------------------------ ------------------------------ ------------- 
+SUP                                                                             
+---                                                                             
+R10 Jim                            Gow                                        3 
+R05                                                                             
+                                                                                
+R03 Bill                           Jones                                      2 
+R01                                                                             
+                                                                                
+R07 Dragan                         Mance                                      2 
+R01                                                                             
+                                                                                
+
+EMP EMPLOYEEFNAME                  EMPLOYEELNAME                  EMPLOYEEGRADE 
+--- ------------------------------ ------------------------------ ------------- 
+SUP                                                                             
+---                                                                             
+R09 Stef                           Curry                                      1 
+R01                                                                             
+                                                                                
+
+10 rows selected.
+
+SQL> select * from unit;
+
+UNIT UNITDESCRIPTION                                                            
+---- ------------------------------                                             
+U001 1 gallon                                                                   
+U002 2 gallons                                                                  
+U003 3 gallon                                                                   
+U004 1 litre                                                                    
+U005 2 litres                                                                   
+U006 3 litres                                                                   
+
+6 rows selected.
+
+SQL> select * from color;
+
+COLORI COLORNAME                      COLORSTYLE                                
+------ ------------------------------ ------------------------------            
+COL001 White                                                                    
+COL002 Black                          Mat                                       
+COL003 Red                            Pale                                      
+COL004 Orange                         Bright                                    
+COL005 Blue                           Gloss                                     
+COL006 Green                                                                    
+
+6 rows selected.
+
+SQL> select * from regulation;
+
+REGULA                                                                          
+------                                                                          
+REGULATIONDESCRIPTION                                                           
+--------------------------------------------------------------------------------
+REG001                                                                          
+Lorem ipsum dolor sit amet, consectetur adipiscing elit                         
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+REG002                                                                          
+Lorem ipsum dolor sit amet, consectetur adipiscing elit                         
+                                                                                
+
+REGULA                                                                          
+------                                                                          
+REGULATIONDESCRIPTION                                                           
+--------------------------------------------------------------------------------
+                                                                                
+                                                                                
+                                                                                
+REG003                                                                          
+Lorem ipsum dolor sit amet, consectetur adipiscing elit                         
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+
+REGULA                                                                          
+------                                                                          
+REGULATIONDESCRIPTION                                                           
+--------------------------------------------------------------------------------
+REG004                                                                          
+Lorem ipsum dolor sit amet, consectetur adipiscing elit                         
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+REG005                                                                          
+Lorem ipsum dolor sit amet, consectetur adipiscing elit                         
+                                                                                
+
+REGULA                                                                          
+------                                                                          
+REGULATIONDESCRIPTION                                                           
+--------------------------------------------------------------------------------
+                                                                                
+                                                                                
+                                                                                
+REG006                                                                          
+Lorem ipsum dolor sit amet, consectetur adipiscing elit                         
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+
+6 rows selected.
+
+SQL> select * from employeegrade;
+
+   GRADEID GRADENAME                          SALARY                            
+---------- ------------------------------ ----------                            
+         1 Junior Salesman                     10000                            
+         2 Salesman                            15000                            
+         3 Area Manager                        20000                            
+         4 Senior Area Manager                 25000                            
+         5 Team Supervisor                     32000                            
+         6 General Manager                     40000                            
+
+6 rows selected.
+
+SQL> select * from hazardlevel;
+
+HAZARD HAZARDLEVELNO                                                            
+------ -------------                                                            
+HAZARDLEVELDESCRIPTION                                                          
+--------------------------------------------------------------------------------
+REGULA                                                                          
+------                                                                          
+HAZ001             1                                                            
+Very low, bening hazard                                                         
+REG001                                                                          
+                                                                                
+HAZ002             2                                                            
+Medium, moderate toxicity                                                       
+REG001                                                                          
+
+HAZARD HAZARDLEVELNO                                                            
+------ -------------                                                            
+HAZARDLEVELDESCRIPTION                                                          
+--------------------------------------------------------------------------------
+REGULA                                                                          
+------                                                                          
+                                                                                
+HAZ003             2                                                            
+Medium, average toxicity                                                        
+REG002                                                                          
+                                                                                
+HAZ004             3                                                            
+High, bening skin toxicity                                                      
+
+HAZARD HAZARDLEVELNO                                                            
+------ -------------                                                            
+HAZARDLEVELDESCRIPTION                                                          
+--------------------------------------------------------------------------------
+REGULA                                                                          
+------                                                                          
+REG004                                                                          
+                                                                                
+HAZ005             4                                                            
+Very high, moderate skin toxicity                                               
+REG005                                                                          
+                                                                                
+HAZ006             5                                                            
+
+HAZARD HAZARDLEVELNO                                                            
+------ -------------                                                            
+HAZARDLEVELDESCRIPTION                                                          
+--------------------------------------------------------------------------------
+REGULA                                                                          
+------                                                                          
+Critical, immediate toxicity                                                    
+REG006                                                                          
+                                                                                
+
+6 rows selected.
+
+SQL> select * from toxicitylevel;
+
+TOXICI TOXICITYLEVELNO                                                          
+------ ---------------                                                          
+TOXICITYLEVELDESCRIPTION                                                        
+--------------------------------------------------------------------------------
+REGULA                                                                          
+------                                                                          
+TOX001               1                                                          
+Very low, bening toxicity                                                       
+                                                                                
+                                                                                
+                                                                                
+REG001                                                                          
+                                                                                
+
+TOXICI TOXICITYLEVELNO                                                          
+------ ---------------                                                          
+TOXICITYLEVELDESCRIPTION                                                        
+--------------------------------------------------------------------------------
+REGULA                                                                          
+------                                                                          
+TOX002               2                                                          
+Medium, moderate toxicity                                                       
+                                                                                
+                                                                                
+                                                                                
+REG001                                                                          
+                                                                                
+
+TOXICI TOXICITYLEVELNO                                                          
+------ ---------------                                                          
+TOXICITYLEVELDESCRIPTION                                                        
+--------------------------------------------------------------------------------
+REGULA                                                                          
+------                                                                          
+TOX003               2                                                          
+Medium, average toxicity                                                        
+                                                                                
+                                                                                
+                                                                                
+REG002                                                                          
+                                                                                
+
+TOXICI TOXICITYLEVELNO                                                          
+------ ---------------                                                          
+TOXICITYLEVELDESCRIPTION                                                        
+--------------------------------------------------------------------------------
+REGULA                                                                          
+------                                                                          
+TOX004               3                                                          
+High, bening skin toxicity                                                      
+                                                                                
+                                                                                
+                                                                                
+REG004                                                                          
+                                                                                
+
+TOXICI TOXICITYLEVELNO                                                          
+------ ---------------                                                          
+TOXICITYLEVELDESCRIPTION                                                        
+--------------------------------------------------------------------------------
+REGULA                                                                          
+------                                                                          
+TOX005               4                                                          
+Very high, moderate skin toxicity                                               
+                                                                                
+                                                                                
+                                                                                
+REG005                                                                          
+                                                                                
+
+TOXICI TOXICITYLEVELNO                                                          
+------ ---------------                                                          
+TOXICITYLEVELDESCRIPTION                                                        
+--------------------------------------------------------------------------------
+REGULA                                                                          
+------                                                                          
+TOX006               5                                                          
+Critical, immediate toxicity                                                    
+                                                                                
+                                                                                
+                                                                                
+REG006                                                                          
+                                                                                
+
+6 rows selected.
+
+SQL> select * from shelflife;
+
+SHELFL SHELFLIFENO                                                              
+------ ---------------                                                          
+SHELFLIFEDESCRIPTION                                                            
+--------------------------------------------------------------------------------
+REGULA                                                                          
+------                                                                          
+SHL001 1                                                                        
+No expiration                                                                   
+REG002                                                                          
+                                                                                
+SHL002 2                                                                        
+Extended shelflife                                                              
+REG001                                                                          
+
+SHELFL SHELFLIFENO                                                              
+------ ---------------                                                          
+SHELFLIFEDESCRIPTION                                                            
+--------------------------------------------------------------------------------
+REGULA                                                                          
+------                                                                          
+                                                                                
+SHL003 2                                                                        
+Extended shelflife, temperature resistant                                       
+REG002                                                                          
+                                                                                
+SHL004 3                                                                        
+Moderate shelflife                                                              
+
+SHELFL SHELFLIFENO                                                              
+------ ---------------                                                          
+SHELFLIFEDESCRIPTION                                                            
+--------------------------------------------------------------------------------
+REGULA                                                                          
+------                                                                          
+REG003                                                                          
+                                                                                
+SHL005 4                                                                        
+Low shelflife                                                                   
+REG003                                                                          
+                                                                                
+SHL006 5                                                                        
+
+SHELFL SHELFLIFENO                                                              
+------ ---------------                                                          
+SHELFLIFEDESCRIPTION                                                            
+--------------------------------------------------------------------------------
+REGULA                                                                          
+------                                                                          
+Immediate usage only                                                            
+REG006                                                                          
+                                                                                
+
+6 rows selected.
+
+SQL> select * from area;
+
+    AREAID AREANAME                       AREADEPOT                      ARE    
+---------- ------------------------------ ------------------------------ ---    
+         1 Northumberland                 Corbridge                      R04    
+         2 Chelsea                        Stamford Bridge                R02    
+         3 NE Central                     Blaydon                        R04    
+         4 Partizan                       Humska 1                       R08    
+         5 Central London                 Picadilly                      R02    
+         6 Belgrade                       Central Station                R10    
+         7 Cumbria                        Penrith                        R10    
+
+7 rows selected.
+
+SQL> select * from customer;
+
+CUST CUSTOMERFNAME                  CUSTOMERLNAME                               
+---- ------------------------------ ------------------------------              
+CUSTOMERADDRESS                                                                 
+--------------------------------------------------------------------------------
+CUSTOMERAREA CUS                                                                
+------------ ---                                                                
+C001 John Wayne                     Limited                                     
+Hollywood Street                                                                
+           1 R08                                                                
+                                                                                
+C002 Erik Clapton                   Limited                                     
+Music Street                                                                    
+           3 R09                                                                
+
+CUST CUSTOMERFNAME                  CUSTOMERLNAME                               
+---- ------------------------------ ------------------------------              
+CUSTOMERADDRESS                                                                 
+--------------------------------------------------------------------------------
+CUSTOMERAREA CUS                                                                
+------------ ---                                                                
+                                                                                
+C003 Smiths Heavy Crisps            Co.                                         
+Unit 34 Armley Industrial Estate                                                
+           1 R05                                                                
+                                                                                
+C004 John Coltraine                 Limited                                     
+Legend Street No1                                                               
+
+CUST CUSTOMERFNAME                  CUSTOMERLNAME                               
+---- ------------------------------ ------------------------------              
+CUSTOMERADDRESS                                                                 
+--------------------------------------------------------------------------------
+CUSTOMERAREA CUS                                                                
+------------ ---                                                                
+           6 R03                                                                
+                                                                                
+C005 Miles Davis                    Limited                                     
+Music Square No23                                                               
+           5 R07                                                                
+                                                                                
+C006 Star Wars Franchise            Co.                                         
+
+CUST CUSTOMERFNAME                  CUSTOMERLNAME                               
+---- ------------------------------ ------------------------------              
+CUSTOMERADDRESS                                                                 
+--------------------------------------------------------------------------------
+CUSTOMERAREA CUS                                                                
+------------ ---                                                                
+Universe Space No314                                                            
+           7 R10                                                                
+                                                                                
+C007 Smurfit Industries             HQ                                          
+18 Skirl Street, Hexham                                                         
+           7 R09                                                                
+                                                                                
+
+CUST CUSTOMERFNAME                  CUSTOMERLNAME                               
+---- ------------------------------ ------------------------------              
+CUSTOMERADDRESS                                                                 
+--------------------------------------------------------------------------------
+CUSTOMERAREA CUS                                                                
+------------ ---                                                                
+C800 J. Parfitt (Mrs)               Limited                                     
+84 Road Avenue, Carlisle                                                        
+           3 R02                                                                
+                                                                                
+
+8 rows selected.
+
+SQL> select * from customeraccount;
+
+ACCOUN CUST                                                                     
+------ ----                                                                     
+A30066 C002                                                                     
+A30045 C003                                                                     
+A40023 C007                                                                     
+A00478 C800                                                                     
+A12001 C005                                                                     
+A01023 C006                                                                     
+
+6 rows selected.
+
+SQL> select * from generalchemical;
+
+PROD PRODUCTNAME                                                                
+---- ------------------------------                                             
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE HAZARD UNIT PRO                                                    
+------------ ------ ---- ---                                                    
+P004 Hydrocaust                                                                 
+Caustic Acid                                                                    
+          32 HAZ006 U001 R05                                                    
+                                                                                
+P005 Hydrogen                                                                   
+Hydrogen Peroxide                                                               
+          22 HAZ003 U004 R07                                                    
+
+PROD PRODUCTNAME                                                                
+---- ------------------------------                                             
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE HAZARD UNIT PRO                                                    
+------------ ------ ---- ---                                                    
+                                                                                
+P006 Selenium                                                                   
+Motor Oil                                                                       
+          44 HAZ002 U002 R04                                                    
+                                                                                
+P011 Cortizon Air                                                               
+Robot Varnish                                                                   
+
+PROD PRODUCTNAME                                                                
+---- ------------------------------                                             
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE HAZARD UNIT PRO                                                    
+------------ ------ ---- ---                                                    
+         100 HAZ001 U003 R08                                                    
+                                                                                
+
+SQL> select * from paint;
+
+PROD PRODUCTNAME                                                                
+---- ------------------------------                                             
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE COLORT UNIT PRO                                                    
+------------ ------ ---- ---                                                    
+P002 Blue Farlex Gloss                                                          
+Blue exterior Gloss Paint                                                       
+          13 COL005 U004 R09                                                    
+                                                                                
+P003 Red Fox                                                                    
+Car color, superior                                                             
+          22 COL003 U005 R01                                                    
+
+PROD PRODUCTNAME                                                                
+---- ------------------------------                                             
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE COLORT UNIT PRO                                                    
+------------ ------ ---- ---                                                    
+                                                                                
+P007 Green Hornets                                                              
+General servicing color                                                         
+          10 COL006 U005 R05                                                    
+                                                                                
+P001 Orange Firebrand                                                           
+High quality cover                                                              
+
+PROD PRODUCTNAME                                                                
+---- ------------------------------                                             
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE COLORT UNIT PRO                                                    
+------------ ------ ---- ---                                                    
+          15 COL004 U001 R03                                                    
+                                                                                
+
+SQL> select * from feedstuffadditive ;
+
+PROD PRODUCTNAME                                                                
+---- ------------------------------                                             
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE TOXICI SHELFI UNIT PRO                                             
+------------ ------ ------ ---- ---                                             
+P008 SuperReach                                                                 
+Additive supreme                                                                
+          16 TOX001 SHL001 U004 R01                                             
+                                                                                
+P009 Variaty Blue                                                               
+Energizer tick                                                                  
+          28 TOX004 SHL001 U002 R03                                             
+
+PROD PRODUCTNAME                                                                
+---- ------------------------------                                             
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE TOXICI SHELFI UNIT PRO                                             
+------------ ------ ------ ---- ---                                             
+                                                                                
+P010 Mixer carbonate                                                            
+Provision fuel creater                                                          
+          44 TOX004 SHL005 U003 R04                                             
+                                                                                
+P012 Driver protex                                                              
+Additive gravy ultra                                                            
+
+PROD PRODUCTNAME                                                                
+---- ------------------------------                                             
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE TOXICI SHELFI UNIT PRO                                             
+------------ ------ ------ ---- ---                                             
+          35 TOX002 SHL002 U001 R09                                             
+                                                                                
+
+SQL> spool off;

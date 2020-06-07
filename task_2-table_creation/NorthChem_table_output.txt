@@ -1,0 +1,118 @@
+SQL> describe employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPLOYEEID                                NOT NULL CHAR(3)
+ EMPLOYEEFNAME                             NOT NULL VARCHAR2(30)
+ EMPLOYEELNAME                             NOT NULL VARCHAR2(30)
+ EMPLOYEEGRADE                                      NUMBER(38)
+ SUPERVISOR                                         CHAR(3)
+
+SQL> describe unit;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ UNITID                                    NOT NULL CHAR(4)
+ UNITDESCRIPTION                                    VARCHAR2(30)
+
+SQL> describe color;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ COLORID                                   NOT NULL CHAR(6)
+ COLORNAME                                 NOT NULL CHAR(30)
+ COLORSTYLE                                         CHAR(30)
+
+SQL> describe regulation;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ REGULATIONID                              NOT NULL CHAR(6)
+ REGULATIONDESCRIPTION                              CHAR(255)
+
+SQL> describe employeegrade;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ GRADEID                                   NOT NULL NUMBER(2)
+ GRADENAME                                          VARCHAR2(30)
+ SALARY                                             NUMBER(7,2)
+
+SQL> describe hazardlevel;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ HAZARDLEVELID                             NOT NULL CHAR(6)
+ HAZARDLEVELNO                                      NUMBER(38)
+ HAZARDLEVELDESCRIPTION                             VARCHAR2(255)
+ REGULATIONLINK                                     CHAR(6)
+
+SQL> describe toxicitylevel;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ TOXICITYLEVELID                           NOT NULL CHAR(6)
+ TOXICITYLEVELNO                           NOT NULL NUMBER(38)
+ TOXICITYLEVELDESCRIPTION                           CHAR(255)
+ REGULATIONLINK                                     CHAR(6)
+
+SQL> describe shelflife;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SHELFLIFEID                               NOT NULL CHAR(6)
+ SHELFLIFENO                               NOT NULL VARCHAR2(15)
+ SHELFLIFEDESCRIPTION                               VARCHAR2(255)
+ REGULATIONLINK                                     CHAR(6)
+
+SQL> describe area;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ AREAID                                    NOT NULL NUMBER(38)
+ AREANAME                                  NOT NULL VARCHAR2(30)
+ AREADEPOT                                          VARCHAR2(30)
+ AREAMANAGER                                        CHAR(3)
+
+SQL> describe customer;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CUSTOMERID                                NOT NULL CHAR(4)
+ CUSTOMERFNAME                             NOT NULL VARCHAR2(30)
+ CUSTOMERLNAME                             NOT NULL VARCHAR2(30)
+ CUSTOMERADDRESS                                    VARCHAR2(255)
+ CUSTOMERAREA                                       NUMBER(38)
+ CUSTOMERREPRESENTATIVE                             CHAR(3)
+
+SQL> describe customeraccount;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ACCOUNTNUMBER                             NOT NULL CHAR(6)
+ CUSTOMER                                           CHAR(4)
+
+SQL> describe generalchemical;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PRODUCTNO                                 NOT NULL CHAR(4)
+ PRODUCTNAME                               NOT NULL VARCHAR2(30)
+ PRODUCTDESCRIPTION                                 VARCHAR2(255)
+ PRODUCTPRICE                                       NUMBER(6,2)
+ HAZARDTYPE                                         CHAR(6)
+ UNIT                                               CHAR(4)
+ PRODUCTREPRESENTATIVE                              CHAR(3)
+
+SQL> describe paint;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PRODUCTNO                                 NOT NULL CHAR(4)
+ PRODUCTNAME                               NOT NULL VARCHAR2(30)
+ PRODUCTDESCRIPTION                                 VARCHAR2(255)
+ PRODUCTPRICE                                       NUMBER(6,2)
+ COLORTYPE                                          CHAR(6)
+ UNIT                                               CHAR(4)
+ PRODUCTREPRESENTATIVE                              CHAR(3)
+
+SQL> describe feedstuffadditive ;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PRODUCTNO                                 NOT NULL CHAR(4)
+ PRODUCTNAME                               NOT NULL VARCHAR2(30)
+ PRODUCTDESCRIPTION                                 VARCHAR2(255)
+ PRODUCTPRICE                                       NUMBER(6,2)
+ TOXICITY                                           CHAR(6)
+ SHELFINGLIFE                                       CHAR(6)
+ UNIT                                               CHAR(4)
+ PRODUCTREPRESENTATIVE                              CHAR(3)
+
+SQL> spool off;

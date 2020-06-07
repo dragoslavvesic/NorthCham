@@ -1,0 +1,24 @@
+spool U:\KC7013\select_data_output.txt;
+SELECT EmployeeID, EmployeeFName, EmployeeLName, ProductName, ProductDescription, ProductPrice, SupervisorName, SupervisorSurname
+FROM 
+(SELECT *
+FROM
+(SELECT * 
+FROM
+(SELECT ProductName, ProductDescription, ProductPrice, ProductRepresentative
+FROM GeneralChemical
+UNION
+SELECT ProductName, ProductDescription, ProductPrice, ProductRepresentative
+FROM Paint
+UNION
+SELECT ProductName, ProductDescription, ProductPrice, ProductRepresentative
+FROM FeedstuffAdditive)
+t3
+RIGHT OUTER JOIN Employee e
+ON e.EmployeeID = t3.ProductRepresentative)
+t4
+INNER JOIN (SELECT e.EmployeeID AS ID, e.EmployeeFName AS SupervisorName, e.EmployeeLName AS SupervisorSurname, e.EmployeeGrade AS
+            Grade, e.Supervisor AS Superior
+            FROM Employee e) t5
+ON t4.Supervisor = t5.ID);
+spool off;

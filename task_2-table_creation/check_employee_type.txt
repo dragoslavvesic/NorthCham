@@ -1,0 +1,9 @@
+CREATE FUNCTION get_type(@model NUMBER)
+RETURNS NUMBER
+AS
+BEGIN
+RETURN (SELECT type FROM Product WHERE model = @model)
+END;
+
+ALTER TABLE PC
+ADD CONSTRAINT model_type CHECK('PC' = dbo.get_type(model));

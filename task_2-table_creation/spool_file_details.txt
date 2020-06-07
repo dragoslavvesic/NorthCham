@@ -1,0 +1,16 @@
+spool U:\KC7013\company_output.txt;
+describe employee;
+describe unit;
+describe color;
+describe regulation;
+describe employeegrade;
+describe hazardlevel;
+describe toxicitylevel;
+describe shelflife;
+describe area;
+describe customer;
+describe customeraccount;
+describe generalchemical;
+describe paint;
+describe feedstuffadditive ;
+spool off;

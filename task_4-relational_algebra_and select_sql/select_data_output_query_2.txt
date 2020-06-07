@@ -1,0 +1,134 @@
+SQL> SELECT CustomerID, CustomerFName, CustomerLName, CustomerAddress, CustomerArea, AreaName, AreaDepot, AreaManagerName,
+  2  AreaManagerSurname
+  3  FROM
+  4  (SELECT *
+  5  FROM
+  6  (SELECT *
+  7  FROM
+  8  (SELECT CustomerID, CustomerFName, CustomerLName, CustomerAddress, CustomerArea
+  9  FROM Customer)
+ 10  t
+ 11  LEFT OUTER JOIN Area a
+ 12  ON t.CustomerArea = a.AreaID
+ 13  )
+ 14  t1
+ 15  LEFT OUTER JOIN (SELECT e.EmployeeID AS EmployeeID, e.EmployeeFName AS AreaManagerName, e.EmployeeLName AS AreaManagerSurname,
+ 16                  e.EmployeeGrade AS EmployeeGrade, e.Supervisor AS Supervisor
+ 17                  FROM Employee e) t2
+ 18  ON t1.AreaManager = t2.EmployeeID);
+
+CUST CUSTOMERFNAME                  CUSTOMERLNAME                               
+---- ------------------------------ ------------------------------              
+CUSTOMERADDRESS                                                                 
+--------------------------------------------------------------------------------
+CUSTOMERAREA AREANAME                       AREADEPOT                           
+------------ ------------------------------ ------------------------------      
+AREAMANAGERNAME                AREAMANAGERSURNAME                               
+------------------------------ ------------------------------                   
+C005 Miles Davis                    Limited                                     
+Music Square No23                                                               
+           5 Central London                 Picadilly                           
+Eden                           Hazard                                           
+                                                                                
+
+CUST CUSTOMERFNAME                  CUSTOMERLNAME                               
+---- ------------------------------ ------------------------------              
+CUSTOMERADDRESS                                                                 
+--------------------------------------------------------------------------------
+CUSTOMERAREA AREANAME                       AREADEPOT                           
+------------ ------------------------------ ------------------------------      
+AREAMANAGERNAME                AREAMANAGERSURNAME                               
+------------------------------ ------------------------------                   
+C002 Erik Clapton                   Limited                                     
+Music Street                                                                    
+           3 NE Central                     Blaydon                             
+Jane                           Chilton                                          
+                                                                                
+
+CUST CUSTOMERFNAME                  CUSTOMERLNAME                               
+---- ------------------------------ ------------------------------              
+CUSTOMERADDRESS                                                                 
+--------------------------------------------------------------------------------
+CUSTOMERAREA AREANAME                       AREADEPOT                           
+------------ ------------------------------ ------------------------------      
+AREAMANAGERNAME                AREAMANAGERSURNAME                               
+------------------------------ ------------------------------                   
+C800 J. Parfitt (Mrs)               Limited                                     
+84 Road Avenue, Carlisle                                                        
+           3 NE Central                     Blaydon                             
+Jane                           Chilton                                          
+                                                                                
+
+CUST CUSTOMERFNAME                  CUSTOMERLNAME                               
+---- ------------------------------ ------------------------------              
+CUSTOMERADDRESS                                                                 
+--------------------------------------------------------------------------------
+CUSTOMERAREA AREANAME                       AREADEPOT                           
+------------ ------------------------------ ------------------------------      
+AREAMANAGERNAME                AREAMANAGERSURNAME                               
+------------------------------ ------------------------------                   
+C001 John Wayne                     Limited                                     
+Hollywood Street                                                                
+           1 Northumberland                 Corbridge                           
+Jane                           Chilton                                          
+                                                                                
+
+CUST CUSTOMERFNAME                  CUSTOMERLNAME                               
+---- ------------------------------ ------------------------------              
+CUSTOMERADDRESS                                                                 
+--------------------------------------------------------------------------------
+CUSTOMERAREA AREANAME                       AREADEPOT                           
+------------ ------------------------------ ------------------------------      
+AREAMANAGERNAME                AREAMANAGERSURNAME                               
+------------------------------ ------------------------------                   
+C003 Smiths Heavy Crisps            Co.                                         
+Unit 34 Armley Industrial Estate                                                
+           1 Northumberland                 Corbridge                           
+Jane                           Chilton                                          
+                                                                                
+
+CUST CUSTOMERFNAME                  CUSTOMERLNAME                               
+---- ------------------------------ ------------------------------              
+CUSTOMERADDRESS                                                                 
+--------------------------------------------------------------------------------
+CUSTOMERAREA AREANAME                       AREADEPOT                           
+------------ ------------------------------ ------------------------------      
+AREAMANAGERNAME                AREAMANAGERSURNAME                               
+------------------------------ ------------------------------                   
+C006 Star Wars Franchise            Co.                                         
+Universe Space No314                                                            
+           7 Cumbria                        Penrith                             
+Jim                            Gow                                              
+                                                                                
+
+CUST CUSTOMERFNAME                  CUSTOMERLNAME                               
+---- ------------------------------ ------------------------------              
+CUSTOMERADDRESS                                                                 
+--------------------------------------------------------------------------------
+CUSTOMERAREA AREANAME                       AREADEPOT                           
+------------ ------------------------------ ------------------------------      
+AREAMANAGERNAME                AREAMANAGERSURNAME                               
+------------------------------ ------------------------------                   
+C007 Smurfit Industries             HQ                                          
+18 Skirl Street, Hexham                                                         
+           7 Cumbria                        Penrith                             
+Jim                            Gow                                              
+                                                                                
+
+CUST CUSTOMERFNAME                  CUSTOMERLNAME                               
+---- ------------------------------ ------------------------------              
+CUSTOMERADDRESS                                                                 
+--------------------------------------------------------------------------------
+CUSTOMERAREA AREANAME                       AREADEPOT                           
+------------ ------------------------------ ------------------------------      
+AREAMANAGERNAME                AREAMANAGERSURNAME                               
+------------------------------ ------------------------------                   
+C004 John Coltraine                 Limited                                     
+Legend Street No1                                                               
+           6 Belgrade                       Central Station                     
+Jim                            Gow                                              
+                                                                                
+
+8 rows selected.
+
+SQL> spool off;

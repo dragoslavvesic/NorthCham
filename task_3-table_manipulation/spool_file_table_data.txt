@@ -1,0 +1,16 @@
+spool U:\KC7013\company_data_output.txt;
+select * from employee;
+select * from unit;
+select * from color;
+select * from regulation;
+select * from employeegrade;
+select * from hazardlevel;
+select * from toxicitylevel;
+select * from shelflife;
+select * from area;
+select * from customer;
+select * from customeraccount;
+select * from generalchemical;
+select * from paint;
+select * from feedstuffadditive ;
+spool off;

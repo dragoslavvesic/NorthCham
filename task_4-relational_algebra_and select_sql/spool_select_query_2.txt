@@ -1,0 +1,20 @@
+spool U:\KC7013\select_data_output_query_2.txt;
+SELECT CustomerID, CustomerFName, CustomerLName, CustomerAddress, CustomerArea, AreaName, AreaDepot, AreaManagerName, 
+AreaManagerSurname
+FROM
+(SELECT *
+FROM
+(SELECT *
+FROM
+(SELECT CustomerID, CustomerFName, CustomerLName, CustomerAddress, CustomerArea 
+FROM Customer)
+t
+LEFT OUTER JOIN Area a
+ON t.CustomerArea = a.AreaID
+)
+t1
+LEFT OUTER JOIN (SELECT e.EmployeeID AS EmployeeID, e.EmployeeFName AS AreaManagerName, e.EmployeeLName AS AreaManagerSurname, 
+                e.EmployeeGrade AS EmployeeGrade, e.Supervisor AS Supervisor
+                FROM Employee e) t2
+ON t1.AreaManager = t2.EmployeeID);
+spool off;

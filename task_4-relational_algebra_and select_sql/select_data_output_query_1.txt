@@ -1,0 +1,236 @@
+SQL> SELECT EmployeeID, EmployeeFName, EmployeeLName, ProductName, ProductDescription, ProductPrice, SupervisorName, SupervisorSurname
+  2  FROM
+  3  (SELECT *
+  4  FROM
+  5  (SELECT *
+  6  FROM
+  7  (SELECT ProductName, ProductDescription, ProductPrice, ProductRepresentative
+  8  FROM GeneralChemical
+  9  UNION
+ 10  SELECT ProductName, ProductDescription, ProductPrice, ProductRepresentative
+ 11  FROM Paint
+ 12  UNION
+ 13  SELECT ProductName, ProductDescription, ProductPrice, ProductRepresentative
+ 14  FROM FeedstuffAdditive)
+ 15  t3
+ 16  RIGHT OUTER JOIN Employee e
+ 17  ON e.EmployeeID = t3.ProductRepresentative)
+ 18  t4
+ 19  INNER JOIN (SELECT e.EmployeeID AS ID, e.EmployeeFName AS SupervisorName, e.EmployeeLName AS SupervisorSurname, e.EmployeeGrade AS
+ 20              Grade, e.Supervisor AS Superior
+ 21              FROM Employee e) t5
+ 22  ON t4.Supervisor = t5.ID);
+
+EMP EMPLOYEEFNAME                  EMPLOYEELNAME                                
+--- ------------------------------ ------------------------------               
+PRODUCTNAME                                                                     
+------------------------------                                                  
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE SUPERVISORNAME                 SUPERVISORSURNAME                   
+------------ ------------------------------ ------------------------------      
+R06 Lionel                         Messi                                        
+                                                                                
+                                                                                
+             Lionel                         Messi                               
+                                                                                
+
+EMP EMPLOYEEFNAME                  EMPLOYEELNAME                                
+--- ------------------------------ ------------------------------               
+PRODUCTNAME                                                                     
+------------------------------                                                  
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE SUPERVISORNAME                 SUPERVISORSURNAME                   
+------------ ------------------------------ ------------------------------      
+R05 Mick                           Jagger                                       
+Hydrocaust                                                                      
+Caustic Acid                                                                    
+          32 Lionel                         Messi                               
+                                                                                
+
+EMP EMPLOYEEFNAME                  EMPLOYEELNAME                                
+--- ------------------------------ ------------------------------               
+PRODUCTNAME                                                                     
+------------------------------                                                  
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE SUPERVISORNAME                 SUPERVISORSURNAME                   
+------------ ------------------------------ ------------------------------      
+R05 Mick                           Jagger                                       
+Green Hornets                                                                   
+General servicing color                                                         
+          10 Lionel                         Messi                               
+                                                                                
+
+EMP EMPLOYEEFNAME                  EMPLOYEELNAME                                
+--- ------------------------------ ------------------------------               
+PRODUCTNAME                                                                     
+------------------------------                                                  
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE SUPERVISORNAME                 SUPERVISORSURNAME                   
+------------ ------------------------------ ------------------------------      
+R01 Mary                           Breen                                        
+Red Fox                                                                         
+Car color, superior                                                             
+          22 Lionel                         Messi                               
+                                                                                
+
+EMP EMPLOYEEFNAME                  EMPLOYEELNAME                                
+--- ------------------------------ ------------------------------               
+PRODUCTNAME                                                                     
+------------------------------                                                  
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE SUPERVISORNAME                 SUPERVISORSURNAME                   
+------------ ------------------------------ ------------------------------      
+R01 Mary                           Breen                                        
+SuperReach                                                                      
+Additive supreme                                                                
+          16 Lionel                         Messi                               
+                                                                                
+
+EMP EMPLOYEEFNAME                  EMPLOYEELNAME                                
+--- ------------------------------ ------------------------------               
+PRODUCTNAME                                                                     
+------------------------------                                                  
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE SUPERVISORNAME                 SUPERVISORSURNAME                   
+------------ ------------------------------ ------------------------------      
+R09 Stef                           Curry                                        
+Driver protex                                                                   
+Additive gravy ultra                                                            
+          35 Mary                           Breen                               
+                                                                                
+
+EMP EMPLOYEEFNAME                  EMPLOYEELNAME                                
+--- ------------------------------ ------------------------------               
+PRODUCTNAME                                                                     
+------------------------------                                                  
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE SUPERVISORNAME                 SUPERVISORSURNAME                   
+------------ ------------------------------ ------------------------------      
+R09 Stef                           Curry                                        
+Blue Farlex Gloss                                                               
+Blue exterior Gloss Paint                                                       
+          13 Mary                           Breen                               
+                                                                                
+
+EMP EMPLOYEEFNAME                  EMPLOYEELNAME                                
+--- ------------------------------ ------------------------------               
+PRODUCTNAME                                                                     
+------------------------------                                                  
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE SUPERVISORNAME                 SUPERVISORSURNAME                   
+------------ ------------------------------ ------------------------------      
+R07 Dragan                         Mance                                        
+Hydrogen                                                                        
+Hydrogen Peroxide                                                               
+          22 Mary                           Breen                               
+                                                                                
+
+EMP EMPLOYEEFNAME                  EMPLOYEELNAME                                
+--- ------------------------------ ------------------------------               
+PRODUCTNAME                                                                     
+------------------------------                                                  
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE SUPERVISORNAME                 SUPERVISORSURNAME                   
+------------ ------------------------------ ------------------------------      
+R03 Bill                           Jones                                        
+Orange Firebrand                                                                
+High quality cover                                                              
+          15 Mary                           Breen                               
+                                                                                
+
+EMP EMPLOYEEFNAME                  EMPLOYEELNAME                                
+--- ------------------------------ ------------------------------               
+PRODUCTNAME                                                                     
+------------------------------                                                  
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE SUPERVISORNAME                 SUPERVISORSURNAME                   
+------------ ------------------------------ ------------------------------      
+R03 Bill                           Jones                                        
+Variaty Blue                                                                    
+Energizer tick                                                                  
+          28 Mary                           Breen                               
+                                                                                
+
+EMP EMPLOYEEFNAME                  EMPLOYEELNAME                                
+--- ------------------------------ ------------------------------               
+PRODUCTNAME                                                                     
+------------------------------                                                  
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE SUPERVISORNAME                 SUPERVISORSURNAME                   
+------------ ------------------------------ ------------------------------      
+R02 Eden                           Hazard                                       
+                                                                                
+                                                                                
+             Mary                           Breen                               
+                                                                                
+
+EMP EMPLOYEEFNAME                  EMPLOYEELNAME                                
+--- ------------------------------ ------------------------------               
+PRODUCTNAME                                                                     
+------------------------------                                                  
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE SUPERVISORNAME                 SUPERVISORSURNAME                   
+------------ ------------------------------ ------------------------------      
+R10 Jim                            Gow                                          
+                                                                                
+                                                                                
+             Mick                           Jagger                              
+                                                                                
+
+EMP EMPLOYEEFNAME                  EMPLOYEELNAME                                
+--- ------------------------------ ------------------------------               
+PRODUCTNAME                                                                     
+------------------------------                                                  
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE SUPERVISORNAME                 SUPERVISORSURNAME                   
+------------ ------------------------------ ------------------------------      
+R08 Milko                          Djurovski                                    
+Cortizon Air                                                                    
+Robot Varnish                                                                   
+         100 Mick                           Jagger                              
+                                                                                
+
+EMP EMPLOYEEFNAME                  EMPLOYEELNAME                                
+--- ------------------------------ ------------------------------               
+PRODUCTNAME                                                                     
+------------------------------                                                  
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE SUPERVISORNAME                 SUPERVISORSURNAME                   
+------------ ------------------------------ ------------------------------      
+R04 Jane                           Chilton                                      
+Mixer carbonate                                                                 
+Provision fuel creater                                                          
+          44 Mick                           Jagger                              
+                                                                                
+
+EMP EMPLOYEEFNAME                  EMPLOYEELNAME                                
+--- ------------------------------ ------------------------------               
+PRODUCTNAME                                                                     
+------------------------------                                                  
+PRODUCTDESCRIPTION                                                              
+--------------------------------------------------------------------------------
+PRODUCTPRICE SUPERVISORNAME                 SUPERVISORSURNAME                   
+------------ ------------------------------ ------------------------------      
+R04 Jane                           Chilton                                      
+Selenium                                                                        
+Motor Oil                                                                       
+          44 Mick                           Jagger                              
+                                                                                
+
+15 rows selected.
+
+SQL> spool off;
